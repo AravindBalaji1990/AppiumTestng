@@ -47,14 +47,14 @@ public class ExcelUtil {
             int totalRows = ExcelWSheet.getLastRowNum();
             // From the rows how many columns/cells
             int noOfColumns = ExcelWSheet.getRow(totalRows).getLastCellNum();
-            int col = noOfColumns - 1;
+            int col = noOfColumns;
             tabArray = new String[totalRows][col];
             ci = 0;
             // Row values
             for (int i = 1; i <= totalRows; i++, ci++) {
                 cj = 0;
                 // Column values
-                for (int j = 1; j <= col; j++, cj++) {
+                for (int j = 0; j <= col; j++, cj++) {
                     tabArray[ci][cj] = getCellData(i, j);// data from the excel
                     System.out.println("The values for i and j : " + tabArray[ci][cj]);
                 }

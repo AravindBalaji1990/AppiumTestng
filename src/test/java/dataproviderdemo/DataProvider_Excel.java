@@ -34,11 +34,11 @@ public class DataProvider_Excel {
         WebElement logo = driver.findElement(AppiumBy.xpath("//img[@alt='home']"));
         if(logo.isDisplayed() == true){
             for(int i =1 ;i< ExcelUtilReadWrite.getRowUsed();i++){
-                ExcelUtilReadWrite.setCellData("Pass", i, col_result, "BasicData");
+//                ExcelUtilReadWrite.setCellData("Pass", i, col_result, "BasicData");
             }
         }else{
             for(int i =1 ;i< ExcelUtilReadWrite.getRowUsed();i++){
-                ExcelUtilReadWrite.setCellData("Fail", i, col_result, "BasicData");
+//                ExcelUtilReadWrite.setCellData("Fail", i, col_result, "BasicData");
             }
         }
     }

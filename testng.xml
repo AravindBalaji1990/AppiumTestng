@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-    <parameter name="data1" value="test1" />
-    <test name="Test">
-        <parameter name="data2" value="test2" />
+<suite name="Suite" thread-count="2" parallel="tests">
+
+    <test name="TestAndroidReal">
         <classes>
-            <class name="dataproviderarraydemo.DataproviderArrayTestDemo" />
+            <class name="testngparallelwithTest.ParallelTestingTests" />
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+
+<!--    <test name="TestAndroidSimulator">-->
+<!--        <classes>-->
+<!--            <class name="testngparallelwithTest.ParallelTestingTests2" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="TestAndroidSimulatorios">
+        <classes>
+            <class name="testngparallelwithTest.ParallelTestingTestsios" />
+        </classes>
+    </test>
+
+</suite>

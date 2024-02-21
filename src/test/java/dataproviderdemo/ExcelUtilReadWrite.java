@@ -123,7 +123,7 @@ public class ExcelUtilReadWrite {
         }
     }
 
-    public static void setCellData(String Result, int RowNum, int ColNum, String SheetName) throws Exception {
+    public static void setCellData(String Result, int RowNum, int ColNum, String SheetName, String path) throws Exception {
         try {
 
             ExcelWSheet = ExcelWBook.getSheet(SheetName);
@@ -135,13 +135,13 @@ public class ExcelUtilReadWrite {
             } else {
                 Cell.setCellValue(Result);
             }
-            FileOutputStream fileOut = new FileOutputStream(DataProvider_Excel.Path_TestData);
+            FileOutputStream fileOut = new FileOutputStream(path);
             ExcelWBook.write(fileOut);
             fileOut.flush();
             fileOut.close();
-            ExcelWBook = new XSSFWorkbook(new FileInputStream(DataProvider_Excel.Path_TestData));
+//            ExcelWBook = new XSSFWorkbook(new FileInputStream(DataProvider_Excel.Path_TestData));
         } catch (Exception e) {
-
+            throw new Exception(e);
         }
 
     }
