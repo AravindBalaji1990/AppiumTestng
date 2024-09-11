@@ -4,9 +4,9 @@
     <test name="Test">
         <groups>
             <run>
-                <include name="smoketest" />
-                <include name="regressiontest" />
-                <exclude name="end2endtest" />
+                <exclude name="smoketest" />
+                <exclude name="regressiontest" />
+                <include name="end2endtest" />
             </run>
         </groups>
         <classes>

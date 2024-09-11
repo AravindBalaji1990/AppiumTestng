@@ -3,6 +3,8 @@ package testngparallelwithTest;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.remote.AutomationName;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -18,19 +20,7 @@ static AndroidDriver driver;
 
     @BeforeTest
     public void start() throws MalformedURLException {
-        System.out.println("this is starts");
-        UiAutomator2Options options = new UiAutomator2Options();
-        options.setPlatformName("Android");
-//        options.setDeviceName("emulator-5554");
-        options.setDeviceName("emulator-5554");
-        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
-//        options.setAppPackage("com.saucelabs.mydemoapp.rn");
-//        options.setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity");
-        options.setAppWaitForLaunch(true);
-        options.setAppWaitDuration(Duration.ofMillis(50000));
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-
+       System.out.println("this is before");
     }
 
     @AfterTest
@@ -40,8 +30,36 @@ static AndroidDriver driver;
 
 
     @Test
-    public void testcase1(){
+    public void testcaseAndorid() throws MalformedURLException {
+        System.out.println("this is starts");
+        System.out.println("this is the before");
+        UiAutomator2Options options = new UiAutomator2Options();
+        options.setPlatformName("Android");
+//        options.setDeviceName("emulator-5554");
+        options.setDeviceName("emulator 5554");
+        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
+        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
+//        options.setAppPackage("com.saucelabs.mydemoapp.rn");
+//        options.setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity");
+        options.setAppWaitForLaunch(true);
+        options.setAppWaitDuration(Duration.ofMillis(50000));
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+
         System.out.println("this is  my testcase");
-    Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed());
+    }
+
+    @Test
+    public void testcaseIOS() throws MalformedURLException {
+        System.out.println("this is starts");
+        XCUITestOptions options = new XCUITestOptions();
+        options.setDeviceName("iPhone 15");
+//        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/ios-app.zip");
+//        options.setAutoWebview(true);
+//        options.setAppPushTimeout(Duration.ofMillis(50000));
+        options.setBundleId("com.moataz.dailycheck");
+       IOSDriver driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
+        System.out.println("this is  my testcase");
+        Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed());
     }
 }

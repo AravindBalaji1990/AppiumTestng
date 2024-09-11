@@ -70,6 +70,18 @@
             <version>1.4.14</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version> <!-- Use the latest version available -->
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
     <build>
@@ -90,7 +102,7 @@
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng_groups.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
