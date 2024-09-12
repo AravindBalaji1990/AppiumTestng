@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="dataproviderdemo.DataproviderDemoTest" />
+            <class name="dataproviderarraydemo.DataproviderArrayTestDemo" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

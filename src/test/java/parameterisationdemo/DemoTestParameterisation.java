@@ -16,18 +16,17 @@ public class DemoTestParameterisation {
     AndroidDriver driver;
 
     @BeforeSuite
-    public  void start() throws MalformedURLException, InterruptedException {
+    @Parameters({"apppath","devicename"} )
+    public  void start(String apppath, String devicename) throws MalformedURLException, InterruptedException {
         System.out.println("this is the before method");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
-        options.setDeviceName("29221JEGR00379");
+        options.setDeviceName(devicename);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
-//        options.setAppPackage("com.saucelabs.mydemoapp.rn");
-//        options.setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity");
+        options.setApp(apppath);
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
-         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
 
     }
 
@@ -40,7 +39,7 @@ public class DemoTestParameterisation {
 
 
     @Test
-    @Parameters({ "data" })
+    @Parameters({ "inputdata" })
     public void testcase1(String valuetiinput) throws InterruptedException {
     System.out.println("this is the first case 1");
     Thread.sleep(5000);

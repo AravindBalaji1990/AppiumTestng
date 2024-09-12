@@ -26,12 +26,9 @@ public class DataproviderDemoTest {
         System.out.println("this is the before");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
-//        options.setDeviceName("emulator-5554");
         options.setDeviceName("29221JEGR00379");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
-//        options.setAppPackage("com.saucelabs.mydemoapp.rn");
-//        options.setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity");
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
@@ -41,11 +38,6 @@ public class DataproviderDemoTest {
         @AfterMethod
         public  void teardown(){
         System.out.println("this is the after");
-//if(Boolean.valueOf(System.getProperty("result"))  == true ){
-//
-//}else{
-//
-//}
         driver.quit();
 
     }

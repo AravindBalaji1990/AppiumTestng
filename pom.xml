@@ -24,7 +24,7 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>9.0.0</version>
+            <version>9.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -102,7 +102,7 @@
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng_groups.xml</suiteXmlFile>
+                        <suiteXmlFile>testng_parameterisationbasic.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
