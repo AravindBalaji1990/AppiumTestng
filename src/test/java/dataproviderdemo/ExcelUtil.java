@@ -11,6 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ExcelUtil {
@@ -110,6 +111,30 @@ public class ExcelUtil {
             System.out.println(e.getMessage());
             throw (e);
         }
+    }
+
+    public static void setCellData(String Result, int RowNum, int ColNum, String SheetName, String path) throws Exception {
+        try {
+
+            ExcelWSheet = ExcelWBook.getSheet(SheetName);
+            Row = ExcelWSheet.getRow(RowNum);
+            Cell = Row.getCell(ColNum);
+            if (Cell == null) {
+                Cell = Row.createCell(ColNum);
+                Cell.setCellValue(Result);
+            } else {
+                Cell.setCellValue(Result);
+            }
+            // if we dont do this then we will be not able to write
+            FileOutputStream fileOut = new FileOutputStream(path);
+            ExcelWBook.write(fileOut);
+            fileOut.flush();
+            fileOut.close();
+//            ExcelWBook = new XSSFWorkbook(new FileInputStream(DataProvider_Excel.Path_TestData));
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+
     }
 
 }

@@ -33,14 +33,16 @@ public class ExcelUtilReadWrite {
     }
 
     public static Object[][] getTableArray(String FilePath, String SheetName) throws Exception {
+        // intialisation to store the credentials from the excel and to be used int he dataprovider
         String[][] tabArray = null;
         try {
             FileInputStream ExcelFile = new FileInputStream(FilePath);
             // Access the required test data sheet
             ExcelWBook = new XSSFWorkbook(ExcelFile);
             ExcelWSheet = ExcelWBook.getSheet(SheetName);
+            // temporary varibel to store the index values of the cell from the excel
             int ci, cj;
-            // Total number of rows
+            // Total number of rows - which are filled in
             int totalRows = ExcelWSheet.getLastRowNum();
             // From the rows how many columns/cells
             int noOfColumns = ExcelWSheet.getRow(totalRows).getLastCellNum();
@@ -52,7 +54,8 @@ public class ExcelUtilReadWrite {
                 cj = 0;
                 // Column values
                 for (int j = 0; j < col; j++, cj++) {
-                    tabArray[ci][cj] = getCellData(i, j);// data from the excel
+                    // it will retrive the cell data based on the ci and cj index values
+                    tabArray[ci][cj] = getCellData(i, j);
                     System.out.println("The values for i and j : " + tabArray[ci][cj]);
                 }
             }
@@ -75,6 +78,7 @@ public class ExcelUtilReadWrite {
     public static String getCellData(int RowNum, int ColNum) throws Exception {
         try {
             Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+            //getStringCellValue- this will help us to convert the cell value to string
             String CellData = Cell.getStringCellValue();
             return CellData;
         } catch (Exception e) {

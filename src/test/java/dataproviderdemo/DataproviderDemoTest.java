@@ -17,7 +17,6 @@ import java.time.Duration;
 
 public class DataproviderDemoTest {
 
-
         AndroidDriver driver;
         boolean result= false;
 
@@ -42,10 +41,9 @@ public class DataproviderDemoTest {
 
     }
 
-
         @DataProvider(name = "AuthenticationDatafromexcel")
         public Object[][] credentials() throws Exception {
-        Object[][] datafromexcel = ExcelUtilReadWrite.getTableArray("/Users/aravindbalaji/Documents/Appium/ExcelsheetData/TestData.xlsx","Sheet1");
+        Object[][] datafromexcel = ExcelUtilReadWrite.getTableArray("/Users/aravindbalaji/Documents/Appium/ExcelsheetData/TestData.xlsx","Credentiala");
         System.out.println("data form Excel :" +datafromexcel);
         return datafromexcel;
     }
