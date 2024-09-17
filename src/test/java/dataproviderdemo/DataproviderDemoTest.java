@@ -19,6 +19,8 @@ public class DataproviderDemoTest {
 
         AndroidDriver driver;
         boolean result= false;
+        int resultcolumn = 3;
+        int j =1;
 
         @BeforeMethod
         public  void start() throws MalformedURLException, InterruptedException {
@@ -51,34 +53,39 @@ public class DataproviderDemoTest {
 
         @Test(dataProvider = "AuthenticationDatafromexcel")
         public void testcase1(String sUsername, String sPassword, String data) throws Exception {
-
-//            SoftAssert sfg = new SoftAssert();
-
             System.out.println("username : " + sUsername);
             System.out.println("password : " + sPassword);
             System.out.println("Keyword data : " + data);
             Thread.sleep(5000);
-            Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed(),"the data is not available");
-            driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
-            Thread.sleep(5000);
-//     WebElement item =  driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"TextFields\"]"));
-            driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"TextFields\").instance(0))")).click();
-            Thread.sleep(5000);
-            driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).clear();
-            Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).isDisplayed(),"the data is not available");
+//            int j = 0;
 
-            driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).sendKeys(sUsername);
-            result = true;
-            System.setProperty("result", String.valueOf(result));
-            if(result == true){
-                for(int i =1 ;i< ExcelUtilReadWrite.getRowUsed();i++){
-                    ExcelUtilReadWrite.setCellData("Pass", i,4 , "Sheet1", "/Users/aravindbalaji/Documents/Appium/ExcelsheetData/TestData.xlsx");
-                }
-            }else{
-                for(int i =1 ;i< ExcelUtilReadWrite.getRowUsed();i++){
-                    ExcelUtilReadWrite.setCellData("Fail", i, 4, "Sheet1","/Users/aravindbalaji/Documents/Appium/ExcelsheetData/TestData.xlsx");
-                }
-            }
+try {
+    j++;
+    Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed(), "the data is not available");
+    driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
+    Thread.sleep(5000);
+//     WebElement item =  driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"TextFields\"]"));
+    driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"TextFields\").instance(0))")).click();
+    Thread.sleep(5000);
+    driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).clear();
+    Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).isDisplayed(), "the data is not available");
+
+    driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).sendKeys(sUsername);
+    result = true;
+    System.setProperty("result", String.valueOf(result));
+
+}catch (Exception e){
+
+}finally {
+    if (result == true) {
+        ExcelUtilReadWrite.setCellData("Pass", j, resultcolumn, "Credentiala", "/Users/aravindbalaji/Documents/Appium/ExcelsheetData/TestData.xlsx");
+//        j++;
+    } else {
+        ExcelUtilReadWrite.setCellData("Fail", j, resultcolumn, "Credentiala", "/Users/aravindbalaji/Documents/Appium/ExcelsheetData/TestData.xlsx");
+//        j++;
+    }
+
+}
 
 
         }

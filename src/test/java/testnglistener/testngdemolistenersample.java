@@ -18,10 +18,12 @@ public class testngdemolistenersample {
         System.out.println("this is my after method");
     }
 
-    @Test(retryAnalyzer = DemoRetryCheck.class)
+//    (retryAnalyzer = DemoRetryCheck.class)
+    @Test
     public void testcase01(){
         System.out.println("this is my first testcase");
-        Assert.assertFalse(true);
+        Assert.assertFalse(false);
+//        Assert.assertFalse(true);
     }
 
 }
