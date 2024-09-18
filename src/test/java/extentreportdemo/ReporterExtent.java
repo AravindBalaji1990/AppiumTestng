@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 public class ReporterExtent {
-  protected static ExtentSparkReporter sparkreporter;
+    protected static ExtentSparkReporter sparkreporter;
     protected static ExtentReports extent;
     protected static ExtentTest test;
 
@@ -20,7 +20,7 @@ public class ReporterExtent {
         sparkreporter = new ExtentSparkReporter("extent.html");
         sparkreporter.config().setTheme(Theme.STANDARD);
         sparkreporter.config().setDocumentTitle("Demo Run Appium Session");
-        sparkreporter.config().setReportName("Demo Runs");
+        sparkreporter.config().setReportName("Demo Runs for appium session");
 
         extent = new ExtentReports();
         extent.attachReporter(sparkreporter);

@@ -4,7 +4,7 @@
     <test name="Test">
         <classes>
             <class name="extentreportdemo.TestngExtentReport" />
-            <class name="extentreportdemo.TestngExtentReport1" />
+            <!--<class name="extentreportdemo.TestngExtentReport1" />-->
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

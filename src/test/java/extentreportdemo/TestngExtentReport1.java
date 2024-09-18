@@ -17,7 +17,7 @@ public class TestngExtentReport1 extends  ReporterExtent {
     @Test
     public void testcase1(){
 
-        test = extent.createTest("test fail");
+        test = extent.createTest("test Pass");
         test.log(Status.INFO, "test info");
 
             Assert.assertTrue(true);
