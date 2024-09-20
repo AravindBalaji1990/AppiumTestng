@@ -47,7 +47,7 @@ public class ParallelTestingTestsios {
     @Test
     public void testcase1(){
         System.out.println("this is  my testcase");
-        WaitUtility.waitforElement(driver,60,By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]") );
+//        WaitUtility.waitforElement(driver,60,By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]") );
     Assert.assertTrue(        driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]")).isDisplayed());
     }
 }
