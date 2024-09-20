@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import waittimeAppium.WaitUtility;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -23,8 +24,10 @@ public class ParallelTestingTestsios {
     public void start() throws MalformedURLException {
         System.out.println("this is starts");
         XCUITestOptions options = new XCUITestOptions();
-        options.setDeviceName("iPhone 15");
+        options.setDeviceName("iPhone 16 Plus");
+        options.setUdid("A332C391-A85E-4B1E-8F55-63695EB04AED");
 //        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/ios-app.zip");
+        options.setUseNewWDA(false);
 //        options.setAutoWebview(true);
 //        options.setAppPushTimeout(Duration.ofMillis(50000));
 
@@ -37,12 +40,14 @@ public class ParallelTestingTestsios {
     @AfterTest
     public void end(){
         System.out.println("this is end");
+        driver.quit();
     }
 
 
     @Test
     public void testcase1(){
         System.out.println("this is  my testcase");
+        WaitUtility.waitforElement(driver,60,By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]") );
     Assert.assertTrue(        driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]")).isDisplayed());
     }
 }
