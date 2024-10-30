@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="testpacktestng.DemoTest1" />
+            <class name="testpacktestngdependsfeature.dependsonmethoddemo" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

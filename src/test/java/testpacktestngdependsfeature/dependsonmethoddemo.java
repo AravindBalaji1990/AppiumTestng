@@ -18,7 +18,7 @@ public class dependsonmethoddemo {
         System.out.println("this is from after method");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testcase1(){
         System.out.println("this is from testcase1");
     }
