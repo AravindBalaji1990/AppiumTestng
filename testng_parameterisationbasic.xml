@@ -3,6 +3,7 @@
 <suite name="Suite" parallel="tests" thread-count="2">
     <parameter name="apppath" value="/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk" />
     <parameter name="devicename" value="29221JEGR00379" />
+    <parameter name="inputdata" value="testdata from suite level" />
     <test name="TestAndorid">
         <parameter name="inputdata" value="test data" />
         <classes>
