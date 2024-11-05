@@ -53,21 +53,27 @@ public class DataproviderArrayTestDemo {
     }
 
 
-//    @Test(dataProvider = "authenticationwithpropertiesfile")
-//    public void testcase1(String sUsername, String sPassword) throws InterruptedException {
-//        System.out.println("username : "+sUsername);
-//        System.out.println("password : "+sPassword);
-//        Thread.sleep(5000);
-//        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
-//        Thread.sleep(5000);
-////     WebElement item =  driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"TextFields\"]"));
-//        driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"TextFields\").instance(0))")).click();
-//        Thread.sleep(5000);
-//        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).clear();
-//        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).sendKeys(sUsername);
-//
-//
-//    }
+    @Test(dataProvider = "authenticationwithpropertiesfile")
+    public void testcase1(String sUsername, String sPassword) throws InterruptedException {
+        String[] data = null;
+        if(sUsername.contains("#")) {
+            data = sUsername.split("#");
+            System.out.println("username : " + data[0] );
+        }else{
+            System.out.println("username : " + sUsername);
+        }
+        System.out.println("password : "+sPassword);
+        Thread.sleep(5000);
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
+        Thread.sleep(5000);
+//     WebElement item =  driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"TextFields\"]"));
+        driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"TextFields\").instance(0))")).click();
+        Thread.sleep(5000);
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).clear();
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).sendKeys(data[0]);
+
+
+    }
 
     @Test(dataProvider = "AuthenticationData")
     public void testcase02(String sUsername, String sPassword, String data) throws InterruptedException {
@@ -82,7 +88,5 @@ public class DataproviderArrayTestDemo {
         Thread.sleep(5000);
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).clear();
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"io.appium.android.apis:id/edit1\"]")).sendKeys(sUsername);
-
-
     }
 }
