@@ -134,9 +134,11 @@ public class ExcelUtilReadWrite {
             Row = ExcelWSheet.getRow(RowNum);
             Cell = Row.getCell(ColNum);
             if (Cell == null) {
+                // if cell isnot available then create the cell
                 Cell = Row.createCell(ColNum);
                 Cell.setCellValue(Result);
             } else {
+                // if the cell is predefined just updated the cell
                 Cell.setCellValue(Result);
             }
             FileOutputStream fileOut = new FileOutputStream(path);
