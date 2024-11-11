@@ -19,7 +19,8 @@ public class testngdemolistenersample {
     }
 
 
-    @Test(retryAnalyzer = DemoRetryCheck.class)
+    //(retryAnalyzer = DemoRetryCheck.class)
+    @Test
     public void testcase01(){
         System.out.println("this is my first testcase");
         Assert.assertFalse(true);
