@@ -25,13 +25,13 @@ static AndroidDriver driver;
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
 //        options.setDeviceName("emulator-5554");
-        options.setDeviceName("emulator-5554");
+        options.setDeviceName("H0C9FI1LV01B0300012");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
 //        options.setAppPackage("com.saucelabs.mydemoapp.rn");
 //        options.setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity");
-//        options.setAppWaitForLaunch(true);
-//        options.setAppWaitDuration(Duration.ofMillis(50000));
+        options.setAppWaitForLaunch(true);
+        options.setAppWaitDuration(Duration.ofMillis(50000));
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
         System.out.println("this is  my testcase");
