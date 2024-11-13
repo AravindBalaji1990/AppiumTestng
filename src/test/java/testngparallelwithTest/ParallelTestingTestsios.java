@@ -18,36 +18,36 @@ import java.net.URL;
 import java.time.Duration;
 
 public class ParallelTestingTestsios {
- IOSDriver driver;
+    IOSDriver driver;
 
     @BeforeTest
     public void start() throws MalformedURLException {
         System.out.println("this is starts");
         XCUITestOptions options = new XCUITestOptions();
         options.setDeviceName("iPhone 16 Plus");
-        options.setUdid("A332C391-A85E-4B1E-8F55-63695EB04AED");
-//        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/ios-app.zip");
+        options.setUdid("3E37AF3C-67ED-4E85-AE25-059E835101B7");
+        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/ios-app.zip");
         options.setUseNewWDA(false);
 //        options.setAutoWebview(true);
 //        options.setAppPushTimeout(Duration.ofMillis(50000));
 
-        options.setBundleId("com.moataz.dailycheck");
+//        options.setBundleId("com.moataz.dailycheck");
 
         driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
 
     }
 
     @AfterTest
-    public void end(){
+    public void end() {
         System.out.println("this is end");
         driver.quit();
     }
 
 
     @Test
-    public void testcase1(){
+    public void testcase1() {
         System.out.println("this is  my testcase");
 //        WaitUtility.waitforElement(driver,60,By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]") );
-    Assert.assertTrue(        driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]")).isDisplayed());
     }
 }

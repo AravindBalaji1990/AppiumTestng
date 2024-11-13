@@ -25,8 +25,9 @@ static AndroidDriver driver;
         System.out.println("this is the before");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
-//        options.setDeviceName("emulator-5554");
-        options.setDeviceName("29221JEGR00379");
+        options.setUdid("29221JEGR00379");
+//        options.setCapability("systemPort",8202);
+
         options.setAutoGrantPermissions(true);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");

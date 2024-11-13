@@ -2,17 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests" thread-count="3">
 
-    <test name="TestAndoridReal">
+    <test name="TestAndoridRealDevice1">
+<!--    <test name="TestAndoridRealDevice1" parallel="methods">-->
         <classes>
             <class name="testngparallelwithTest.ParallelTestingTests" />
+<!--            <class name="testngparallelwithTest.ParallelTestingTests2" />-->
         </classes>
     </test>
-<!--    <test name="TestAndoridSimulator">-->
-<!--        <classes>-->
-<!--            <class name="testngparallelwithTest.ParallelTestingTestsios" />-->
-<!--        </classes>-->
-<!--    </test>-->
-    <test name="TestAndroidEmulator">
+    <test name="TestAndoridSimulator">
+        <classes>
+            <class name="testngparallelwithTest.ParallelTestingTestsios" />
+        </classes>
+    </test>
+    <test name="TestAndroidRealDevice2">
         <classes>
             <class name="testngparallelwithTest.ParallelTestingTestsEmulator" />
         </classes>
