@@ -7,7 +7,7 @@ public class TestNgListenerDemo implements ITestListener, ISuiteListener, IInvok
     public void onStart(ISuite arg0) {
 //        Reporter.log("message", true);
         Reporter.log("About to begin executing Onstart of Suite (onStart suite)" + arg0.getName(), true);
-        Reporter.log("About to begin executing Onstart of Suite (onStart suite)" + arg0.getResults(), true);
+        Reporter.log("About to begin executing Onstart of Suite (onStart suite)" + arg0.getOutputDirectory(), true);
     }
 
     // This belongs to ISuiteListener and will execute, once the Suite is
