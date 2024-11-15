@@ -36,10 +36,10 @@ public class WaitUtility {
         return wait.until(ExpectedConditions.numberOfElementsToBe(locator, num)).size();
     }
 
-    public static void waitForElementFluent(AppiumDriver driver, long seconds, By locator, int num){
+    public static void waitForElementFluent(AppiumDriver driver, long seconds, By locator){
         FluentWait wait = new FluentWait<>(driver);
         wait.withTimeout(Duration.ofSeconds(seconds))
-                .pollingEvery(Duration.ofMillis(500))
+                .pollingEvery(Duration.ofMillis(5000))
                 .ignoring(StaleElementReferenceException.class)
                 .ignoring(ElementNotInteractableException.class)
                 .until(ExpectedConditions.elementToBeClickable(locator));

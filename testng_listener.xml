@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="SuiteListener">
     <listeners>
-        <listener class-name="testnglistener.TestNgListenerDemo"></listener>
+        <listener class-name="testnglistener.TestNgListenerDemoScreenshotCheck"></listener>
     </listeners>
     <test name="TestToRun">
         <classes>
-            <class name="testnglistener.testngdemolistenersample" />
+            <class name="testnglistener.TestListener" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
