@@ -17,7 +17,7 @@ public class ReporterExtent {
 
     @BeforeSuite
     public static void setup(){
-        sparkreporter = new ExtentSparkReporter("extent.html");
+        sparkreporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/target/extent.html");
         sparkreporter.config().setTheme(Theme.STANDARD);
         sparkreporter.config().setDocumentTitle("Demo Run Appium Session");
         sparkreporter.config().setReportName("Demo Runs for appium session");

@@ -10,10 +10,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -41,7 +38,7 @@ public class TestngExtentReport extends ReporterExtent {
     @Test
     public void testcase1() throws IOException {
 
-        test = extent.createTest("test fail");
+        test = extent.createTest("Andorid API DEMO App - test fail");
         test.log(Status.INFO, "test info - just started the test");
         ExtentTest launchapp = test.createNode("User has launched the app");
 
@@ -62,14 +59,34 @@ public class TestngExtentReport extends ReporterExtent {
         }
 
     }
-    @Test(enabled = false)
-    public void testcase2(){
+    @Test
+    public void testcase2() throws IOException {
 
-        test = extent.createTest("test pass");
-        test.log(Status.INFO, "test info from pass");
-        Assert.assertFalse(false);
-        test.log(Status.PASS,"Test Pass");
+        test = extent.createTest("Andorid API DEMO App - test pass");
+        test.log(Status.INFO, "test info - just started the test");
+        ExtentTest launchapp = test.createNode("User has launched the app");
 
+        launchapp.log(Status.INFO,"the app is started");
+        try {
+            launchapp.log(Status.INFO,"trying to validate the element");
+            Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"App\"]")).isDisplayed());
+
+        }catch (AssertionError e) {
+            launchapp.log(Status.FAIL,e.getMessage());
+        }
+        finally {
+            launchapp.log(Status.PASS,"taking screenshot");
+
+            test.addScreenCaptureFromPath(obj.takeScreenshot(driver, "sample1"));
+        }
+
+
+    }
+
+
+    @AfterMethod
+    public void closedriver(){
+        driver.quit();
     }
 
 
