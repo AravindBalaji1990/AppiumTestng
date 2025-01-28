@@ -5,7 +5,7 @@
         <groups>
             <run>
                 <exclude name="smoketest" />
-                <exclude name="regressiontest" />
+                <include name="regressiontest" />
                 <include name="end2endtest" />
             </run>
         </groups>

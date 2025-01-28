@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="test run demo1">
+        <classes>
+            <class name="basicannotationdemo.TestAnnotation1"/>
+        </classes>
+    </test>
+   <!-- <test name="test run demo2">
+        <classes>
+            <class name="basicannotationdemo.TestAnnotation"/>
+        </classes>
+    </test>-->
+</suite>
