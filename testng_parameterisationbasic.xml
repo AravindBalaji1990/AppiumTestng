@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests" thread-count="2">
-    <parameter name="apppath" value="/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk" />
+    <parameter name="packagename" value="io.appium.android.apis" />
+    <parameter name="activityname" value="io.appium.android.apis.ApiDemos" />
     <parameter name="devicename" value="29221JEGR00379" />
     <parameter name="inputdata" value="testdata from suite level" />
     <test name="TestAndorid">

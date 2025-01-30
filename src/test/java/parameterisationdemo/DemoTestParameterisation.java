@@ -16,14 +16,15 @@ public class DemoTestParameterisation {
     AndroidDriver driver;
 
     @BeforeSuite
-    @Parameters({"apppath","devicename","inputdata"} )
-    public  void start(String apppath, String devicename, String data) throws MalformedURLException, InterruptedException {
+    @Parameters({"packagename","activityname","devicename","inputdata"} )
+    public  void start(String packagename,String activityname, String devicename, String data) throws MalformedURLException, InterruptedException {
         System.out.println("this is the before method");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
         options.setDeviceName(devicename);// mentioned here
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp(apppath);// mentioned here
+        options.setAppPackage(packagename);
+        options.setAppActivity(activityname);
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
          driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
@@ -47,6 +48,7 @@ public class DemoTestParameterisation {
         driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
         Thread.sleep(5000);
 //     WebElement item =  driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"TextFields\"]"));
+        // this can only do a vertical scroll
         driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"TextFields\").instance(0))")).click();
         Thread.sleep(5000);
         System.out.println("the value form xml : " +valuetiinput);

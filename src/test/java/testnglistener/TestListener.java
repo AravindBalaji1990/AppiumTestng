@@ -32,7 +32,7 @@ public class TestListener {
         options.setPlatformName("Android");
         options.setUdid("29221JEGR00379");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
+        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/android-app.apk");
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);

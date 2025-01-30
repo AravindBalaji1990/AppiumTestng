@@ -24,7 +24,7 @@ public class HardAssertionDemo {
         options.setPlatformName("Android");
         options.setDeviceName("29221JEGR00379");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
+        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/android-app.apk");
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
@@ -57,10 +57,10 @@ public class HardAssertionDemo {
 
     }
 
-    @Test(enabled = true)
+    @Test
     public void testcase3(){
         String datatext = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).getText();
 
-        Assert.assertEquals(datatext,"Views","there is a mismatch between actula and expected");
+        Assert.assertEquals(datatext,"Views","there is a mismatch between actual and expected");
     }
 }

@@ -5,10 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -53,7 +50,7 @@ public class DataproviderDemoTest_swaglab {
 
 
     @Test(dataProvider = "AuthenticationDatafromexcel")
-    public void testcase1(String sUsername, String sPassword) throws Exception {
+    public void testcase1(String sUsername, String sPassword, @Optional("data") String data, @Optional("result") String dataresult) throws Exception {
         System.out.println("username : " + sUsername);
         System.out.println("password : " + sPassword);
         Thread.sleep(5000);
@@ -69,11 +66,18 @@ public class DataproviderDemoTest_swaglab {
             Thread.sleep(10000);
             driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"test-LOGIN\"]")).click();
             Thread.sleep(10000);
-            // once the login is successfull the global varibale is marked true
-            result = true;
-            // we set the data over tot he variable temporarily and which can be reused
-            System.setProperty("result", String.valueOf(result));
-
+            try {
+                if (driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"PRODUCTS\"]")).isDisplayed()) {
+                    // once the login is successfull the global varibale is marked true
+                    result = true;
+                    // we set the data over to the variable temporarily and which can be reused
+                    System.setProperty("result", String.valueOf(result));
+                }
+            }catch (Exception e){
+                result = false;
+                // we set the data over to the variable temporarily and which can be reused
+                System.setProperty("result", String.valueOf(result));
+            }
         } catch (Exception e) {
 
         } finally {
