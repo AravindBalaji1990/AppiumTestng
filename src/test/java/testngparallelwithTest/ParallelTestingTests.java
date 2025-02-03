@@ -30,9 +30,10 @@ static AndroidDriver driver;
 
         options.setAutoGrantPermissions(true);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
-//        options.setAppPackage("co.motovolt.motovoltapp");
-//        options.setAppActivity("co.motovolt.motovoltapp.MainActivity");
+//        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/android-app.apk");
+
+        options.setAppPackage("io.appium.android.apis");
+        options.setAppActivity("io.appium.android.apis.ApiDemos");
 //        options.setAppWaitForLaunch(true);
 //        options.setAppWaitDuration(Duration.ofMillis(50000));
         options.setNewCommandTimeout(Duration.ofSeconds(60));

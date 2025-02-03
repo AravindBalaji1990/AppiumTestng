@@ -20,8 +20,15 @@ public class testngdemolistenersample {
 
 
 
-    @Test(retryAnalyzer = DemoRetryCheck.class)
+//    @Test(retryAnalyzer = DemoRetryCheck.class)
+    @Test
     public void testcase01(){
+        System.out.println("this is my first testcase");
+//        Assert.assertFalse(false);
+        Assert.assertFalse(true);
+    }
+    @Test
+    public void testcase02(){
         System.out.println("this is my first testcase");
         Assert.assertFalse(false);
 //        Assert.assertFalse(true);

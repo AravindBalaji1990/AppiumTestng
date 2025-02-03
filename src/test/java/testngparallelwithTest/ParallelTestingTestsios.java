@@ -25,8 +25,9 @@ public class ParallelTestingTestsios {
         System.out.println("this is starts");
         XCUITestOptions options = new XCUITestOptions();
         options.setDeviceName("iPhone 16 Plus");
-        options.setUdid("3E37AF3C-67ED-4E85-AE25-059E835101B7");
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/ios-app.zip");
+        options.setUdid("9C4CF5F8-F6CD-44FC-AC73-5B595592AD1B");
+//        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/ios-app.zip");
+        options.setBundleId("com.saucelabs.mydemoapp.rn");
         options.setUseNewWDA(false);
 //        options.setAutoWebview(true);
 //        options.setAppPushTimeout(Duration.ofMillis(50000));

@@ -14,9 +14,9 @@
             <class name="testngparallelwithTest.ParallelTestingTestsios" />
         </classes>
     </test>
-    <test name="TestAndroidRealDevice2">
-        <classes>
-            <class name="testngparallelwithTest.ParallelTestingTestsEmulator" />
-        </classes>
-    </test>
+<!--    <test name="TestAndroidRealDevice2">-->
+<!--        <classes>-->
+<!--            <class name="testngparallelwithTest.ParallelTestingTestsEmulator" />-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
