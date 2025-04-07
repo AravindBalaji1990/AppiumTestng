@@ -3,12 +3,13 @@
 <suite name="All Test Suite">
     <test name="test run demo1">
         <classes>
-            <class name="basicannotationdemo.TestAnnotation1"/>
+            <class name="testpacktestng.DemoTest1"/>
+<!--            <class name="testpacktestng.DemoTest1_Method"/>-->
         </classes>
     </test>
-   <!-- <test name="test run demo2">
-        <classes>
-            <class name="basicannotationdemo.TestAnnotation"/>
-        </classes>
-    </test>-->
+<!--   <test name="test run demo2">-->
+<!--        <classes>-->
+<!--            <class name="testpacktestng.DemoTest1_Method"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
