@@ -4,12 +4,6 @@
     <test name="test run demo1">
         <classes>
             <class name="testpacktestng.DemoTest1"/>
-<!--            <class name="testpacktestng.DemoTest1_Method"/>-->
         </classes>
     </test>
-<!--   <test name="test run demo2">-->
-<!--        <classes>-->
-<!--            <class name="testpacktestng.DemoTest1_Method"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
