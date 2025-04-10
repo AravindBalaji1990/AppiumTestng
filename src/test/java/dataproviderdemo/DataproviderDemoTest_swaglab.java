@@ -15,7 +15,7 @@ public class DataproviderDemoTest_swaglab {
 
     AndroidDriver driver;
     boolean result = false;// global variable declared where the result afetr running hte data will be updated
-    int resultcolumn = 3;// cell in the column where the result should be updated
+    int resultcolumn = 2;// cell in the column where the result should be updated
     int j = 0; // this will iterate through the rows and update the result
 
     @BeforeMethod
@@ -50,7 +50,7 @@ public class DataproviderDemoTest_swaglab {
 
 
     @Test(dataProvider = "AuthenticationDatafromexcel")
-    public void testcase1(String sUsername, String sPassword, @Optional("data") String data, @Optional("result") String dataresult) throws Exception {
+    public void testcase1(String sUsername, String sPassword) throws Exception {
         System.out.println("username : " + sUsername);
         System.out.println("password : " + sPassword);
         Thread.sleep(5000);

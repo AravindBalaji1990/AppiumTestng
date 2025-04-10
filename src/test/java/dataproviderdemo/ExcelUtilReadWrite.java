@@ -32,6 +32,7 @@ public class ExcelUtilReadWrite {
         }
     }
 
+    //Generic method to read the data
     public static Object[][] getTableArray(String FilePath, String SheetName) throws Exception {
         // intialisation to store the credentials from the excel and to be used int he dataprovider
         String[][] tabArray = null;

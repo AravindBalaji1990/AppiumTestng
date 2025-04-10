@@ -46,7 +46,6 @@ public class DataproviderArrayTestDemo_Basic {
 
     @DataProvider(name = "authentication")
     public Object[][] authData() {
-
         return new Object[][]{{"standard_user", "secret_sauce"}};
     }
 
