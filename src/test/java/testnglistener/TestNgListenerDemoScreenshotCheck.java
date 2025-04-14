@@ -9,6 +9,7 @@ import org.testng.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 public class TestNgListenerDemoScreenshotCheck implements ITestListener, ISuiteListener, IInvokedMethodListener {
     AndroidDriver driver;
@@ -99,7 +100,8 @@ public class TestNgListenerDemoScreenshotCheck implements ITestListener, ISuiteL
             case ITestResult.FAILURE:
                 status = "Failed 100%".toUpperCase();
                 File srcfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                String filepath = System.getProperty("user.dir") + "/src/test/resources/screenshot/" + result.getName() + ".png";
+                String datedata= String.valueOf(System.currentTimeMillis());
+                String filepath = System.getProperty("user.dir") + "/src/test/resources/screenshot/" + result.getName()+"_"+datedata+ ".png";
                 try {
                     File destination = new File(filepath);
                     FileUtils.copyFile(srcfile, destination);

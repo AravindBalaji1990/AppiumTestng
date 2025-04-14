@@ -10,11 +10,11 @@ public class DemoRetryCheck implements IRetryAnalyzer {
 
     public boolean retry(ITestResult result){
         System.out.println("-------->"+result.getStatus());
-        if(countretry <maximumretry){
-            System.out.println("I am re-running");
-            countretry++;
-            return  true;
-        }
+            if (countretry < maximumretry) {
+                System.out.println("I am re-running");
+                countretry++;
+                return true;
+            }
         return  false;
     }
 

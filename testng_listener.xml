@@ -3,6 +3,7 @@
 <suite name="SuiteListener">
     <listeners>
         <listener class-name="testnglistener.TestNgListenerDemoScreenshotCheck"></listener>
+        <listener class-name="testnglistener.RetryListener"></listener>
     </listeners>
     <test name="TestToRun">
         <classes>

@@ -10,6 +10,8 @@ import org.testng.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DataproviderDemoTest_swaglab {
 
@@ -30,6 +32,7 @@ public class DataproviderDemoTest_swaglab {
         options.setAppPackage("com.swaglabsmobileapp");
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
+
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
     }
