@@ -35,7 +35,7 @@ public class ParallelTestingTests3 {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
 //        options.setDeviceName("emulator-5554");
-        options.setDeviceName("29221JEGR00379");
+        options.setUdid("29221JEGR00379");
         options.setAutoGrantPermissions(true);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
 //        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
@@ -51,6 +51,30 @@ public class ParallelTestingTests3 {
         Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed());
     }
 
+    @Test
+    public void testcase_realdevice() throws MalformedURLException {
+        System.out.println("this is  my testcase");
+        System.out.println("this is starts");
+        System.out.println("this is the before");
+        UiAutomator2Options options = new UiAutomator2Options();
+        options.setPlatformName("Android");
+//        options.setDeviceName("emulator-5554");
+        options.setUdid("H0C9FI1LV01B0300012");
+        options.setAutoGrantPermissions(true);
+        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
+//        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
+        options.setAppPackage("io.appium.android.apis");
+        options.setAppActivity("io.appium.android.apis.ApiDemos");
+//        options.setAppWaitForLaunch(true);
+//        options.setAppWaitDuration(Duration.ofMillis(50000));
+        options.setNewCommandTimeout(Duration.ofSeconds(60));
+        AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+//        WaitUtility.waitforElement(driver,60,AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView") );
+//        WebElement ele = driver.findElement(AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView"));
+//        Assert.assertTrue(ele.isDisplayed());
+        Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed());
+    }
+
 //    //@Test
 //    public void testcase2() {
 //        System.out.println("this is  my testcase");
@@ -60,7 +84,6 @@ public class ParallelTestingTests3 {
 //        Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Text\"]")).isDisplayed());
 //    }
 
-    @Test
     public void testcase3() throws MalformedURLException {
         System.out.println("this is starts");
         XCUITestOptions options = new XCUITestOptions();

@@ -29,7 +29,7 @@ static AndroidDriver driver;
 //        options.setCapability("systemPort",8201);
         options.setUdid("H0C9FI1LV01B0300012");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
+        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/android-app.apk");
 //        options.setAppPackage("com.saucelabs.mydemoapp.rn");
 //        options.setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity");
         options.setAppWaitForLaunch(true);

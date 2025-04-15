@@ -24,11 +24,12 @@ public class ParallelTestingTestsios {
     public void start() throws MalformedURLException {
         System.out.println("this is starts");
         XCUITestOptions options = new XCUITestOptions();
-        options.setDeviceName("iPhone 16 Plus");
-        options.setUdid("9C4CF5F8-F6CD-44FC-AC73-5B595592AD1B");
-//        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/ios-app.zip");
-        options.setBundleId("com.saucelabs.mydemoapp.rn");
-        options.setUseNewWDA(false);
+        options.setPlatformVersion("18.4");
+        options.setDeviceName("iPhone 16");
+        options.setUdid("5C03BC31-8D66-45E2-B899-4BEBC456A0A7");
+        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/ios-app.zip");
+//        options.setBundleId("com.saucelabs.mydemoapp.rn");
+//        options.setUseNewWDA(false);
 //        options.setAutoWebview(true);
 //        options.setAppPushTimeout(Duration.ofMillis(50000));
 

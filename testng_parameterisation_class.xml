@@ -5,7 +5,7 @@
     <test name="TestClassesDemo">
         <classes>
             <class name="testngparallelwithTest.ParallelTestingTests" />
-            <class name="testngparallelwithTest.ParallelTestingTestsios" />
+            <class name="testngparallelwithTest.ParallelTestingTestsEmulator" />
         </classes>
     </test>
 </suite>
