@@ -36,10 +36,11 @@ public class SimplePOM_IOS {
     @Test
     public void testcase() throws MalformedURLException, InterruptedException {
         UiAutomator2Options options = new UiAutomator2Options();
-        options.setPlatformName("iPhone 16");
-        options.setUdid("5C03BC31-8D66-45E2-B899-4BEBC456A0A7");
+        options.setPlatformName("IOS");
+        options.setUdid("3E37AF3C-67ED-4E85-AE25-059E835101B7");
         options.setAutomationName(AutomationName.IOS_XCUI_TEST);
-        options.setApp(System.getProperty("user.dir") + "/src/resources/apps/iOS-Simulator-MyRNDemoApp.1.3.0-162.zip");
+        options.setAppPackage("");
+        options.setAppActivity("");
         options.setAppWaitForLaunch(true);
         driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
         Thread.sleep(3000);

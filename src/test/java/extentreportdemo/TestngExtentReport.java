@@ -29,9 +29,7 @@ public class TestngExtentReport extends ReporterExtent {
         options.setPlatformName("Android");
         options.setDeviceName("29221JEGR00379");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-//        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
-        options.setAppPackage("io.appium.android.apis");
-        options.setAppActivity("io.appium.android.apis.ApiDemos");
+        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
