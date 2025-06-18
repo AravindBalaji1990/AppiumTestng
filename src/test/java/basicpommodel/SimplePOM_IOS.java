@@ -3,6 +3,7 @@ package basicpommodel;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -35,12 +36,11 @@ public class SimplePOM_IOS {
 
     @Test
     public void testcase() throws MalformedURLException, InterruptedException {
-        UiAutomator2Options options = new UiAutomator2Options();
+        XCUITestOptions options = new XCUITestOptions();
         options.setPlatformName("iPhone 16");
         options.setUdid("5C03BC31-8D66-45E2-B899-4BEBC456A0A7");
         options.setAutomationName(AutomationName.IOS_XCUI_TEST);
-        options.setApp(System.getProperty("user.dir") + "/src/resources/apps/iOS-Simulator-MyRNDemoApp.1.3.0-162.zip");
-        options.setAppWaitForLaunch(true);
+        options.setApp("/Users/aravindbalaji/IdeaProjects/TestNgWithMaven/src/test/resources/apps/iOS-Simulator-MyRNDemoApp.1.3.0-162.zip");
         driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
         Thread.sleep(3000);
 

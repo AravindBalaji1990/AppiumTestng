@@ -15,28 +15,28 @@ public class TestAnnotation {
         System.out.println("after method");
 
     }
-//    @BeforeSuite
-//    public void beforesuitetest(){
-//        System.out.println("Before suite");
-//
-//    }
-//
-//    @AfterSuite
-//    public void aftersuitetest(){
-//        System.out.println("After suite");
-//
-//    }
+    @BeforeSuite
+    public void beforesuitetest(){
+        System.out.println("Before suite");
 
-//    @BeforeTest
-//    public void beforetest(){
-//        System.out.println("Before test");
-//
-//    }
-//    @AfterTest
-//    public void aftertest(){
-//        System.out.println("after test");
-//
-//    }
+    }
+
+    @AfterSuite
+    public void aftersuitetest(){
+        System.out.println("After suite");
+
+    }
+
+    @BeforeTest
+    public void beforetest(){
+        System.out.println("Before test");
+
+    }
+    @AfterTest
+    public void aftertest(){
+        System.out.println("after test");
+
+    }
 
     @BeforeClass
     public void beforeclass(){

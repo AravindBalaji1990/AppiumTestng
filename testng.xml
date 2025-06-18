@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="SimplePOM_AND">
+    <test name="All Test">
         <classes>
-            <class name="basicpommodel.SimplePOM_AND">
-            </class>
+
+            <class name="basicannotationdemo.TestAnnotation"></class>
+<!--            <class name="packagename.classname"></class>-->
         </classes>
     </test>
 </suite>
