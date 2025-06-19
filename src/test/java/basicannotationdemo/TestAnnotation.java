@@ -3,9 +3,10 @@ package basicannotationdemo;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+
 public class TestAnnotation {
     @BeforeMethod
-    public void beforemethod(){
+    public void beforemethod() {
         System.out.println("Before method");
 
     }
@@ -15,31 +16,33 @@ public class TestAnnotation {
         System.out.println("after method");
 
     }
+
     @BeforeSuite
-    public void beforesuitetest(){
+    public void beforesuitetest() {
         System.out.println("Before suite");
 
     }
 
     @AfterSuite
-    public void aftersuitetest(){
+    public void aftersuitetest() {
         System.out.println("After suite");
 
     }
 
     @BeforeTest
-    public void beforetest(){
+    public void beforetest() {
         System.out.println("Before test");
 
     }
+
     @AfterTest
-    public void aftertest(){
+    public void aftertest() {
         System.out.println("after test");
 
     }
 
     @BeforeClass
-    public void beforeclass(){
+    public void beforeclass() {
         System.out.println("Before class");
 
     }
@@ -49,7 +52,6 @@ public class TestAnnotation {
         System.out.println("after class");
 
     }
-
 
 
     @Test(description = "test description")
