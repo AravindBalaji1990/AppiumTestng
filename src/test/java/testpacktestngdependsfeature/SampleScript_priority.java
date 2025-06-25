@@ -1,4 +1,4 @@
-package basicannotationdemo;
+package testpacktestngdependsfeature;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -13,20 +13,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class SampleScript {
-    public static AndroidDriver driver;
+public class SampleScript_priority {
+    public AndroidDriver driver;
     public static AppiumDriverLocalService service;
 
-    @BeforeSuite
+
+    @BeforeSuite(alwaysRun = true)
     public void startAppium() {
         System.out.println("----starting appium---");
         // the below code will check for the path of the default appium,sdk,ios
         service = AppiumDriverLocalService.buildDefaultService();
-        // then start the appium server
+        // then start the appium server - as we start in terminal
         service.start();
     }
 
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void initialiseAndroid() throws MalformedURLException {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
@@ -39,20 +40,41 @@ public class SampleScript {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
     }
 
-    @Test
-    public void verifyViewButton() {
+    @Test(description = "verify the view button", priority = 2)
+    public void verifyViewButton() throws MalformedURLException {
+
         WebElement element = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]"));
         Assert.assertTrue(element.isDisplayed(), "element is not displayed on the page");
     }
+    @Test(description = "verify the nfc button", priority = 0)
+    public void verifyNfcButton() throws MalformedURLException {
 
-    @AfterTest
+        WebElement element = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"NFC\"]"));
+        Assert.assertTrue(element.isDisplayed(), "element is not displayed on the page");
+    }
+    @Test(description = "verify the Graphics button", priority = 1)
+    public void verifyMediaButton() throws MalformedURLException {
+
+
+        WebElement element = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Graphics\"]"));
+        Assert.assertTrue(element.isDisplayed(), "element is not displayed on the page");
+    }
+    @Test(description = "verify the Media button",priority = 3,enabled = false)
+    public void verifyGraphicsButton() throws MalformedURLException {
+
+        WebElement element = this.driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Media\"]"));
+        Assert.assertTrue(element.isDisplayed(), "element is not displayed on the page");
+    }
+
+    @AfterTest(alwaysRun = true)
     public void closeAndroid() {
         driver.quit();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void stopAppium() {
         service.stop();
+
     }
 
 

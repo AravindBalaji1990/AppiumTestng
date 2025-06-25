@@ -104,7 +104,8 @@
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
+                        <suiteXmlFile>testng_parameterisationbasic.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
