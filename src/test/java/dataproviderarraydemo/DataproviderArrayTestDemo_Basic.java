@@ -4,10 +4,9 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import org.testng.Assert;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +15,21 @@ import java.time.Duration;
 public class DataproviderArrayTestDemo_Basic {
 
     AndroidDriver driver;
+    public static AppiumDriverLocalService service;
+
+    @BeforeSuite(alwaysRun = true)
+    public void startAppium() {
+        System.out.println("----starting appium---");
+        // the below code will check for the path of the default appium,sdk,ios
+        service = AppiumDriverLocalService.buildDefaultService();
+        // then start the appium server - as we start in terminal
+        service.start();
+    }
+    @AfterSuite(alwaysRun = true)
+    public void stopAppium() {
+        service.stop();
+
+    }
 
     @BeforeMethod
     public void start() throws IOException, InterruptedException {
@@ -44,19 +58,31 @@ public class DataproviderArrayTestDemo_Basic {
         return new Object[][]{{"standard_user", "secret_sauce"}, {"locked_out_user", "secret_sauce"}, {"problem_user", "secret_sauce"}};
     }
 
-    @DataProvider(name = "authentication")
+    @DataProvider(name = "authenticationgooduser")
     public Object[][] authData() {
         return new Object[][]{{"standard_user", "secret_sauce"}};
     }
 
+    @DataProvider(name = "lockeduser")
+    public Object[][] lockeddata() {
+        return new Object[][]{{"locked_out_user", "secret_sauce"}};
+    }
 
-    @Test(dataProvider = "AuthenticationData")
+
+    @Test(dataProvider = "lockeduser")
     public void testcase02(String sUsername, String sPassword) throws InterruptedException {
+
         System.out.println("username from data provider : " + sUsername);
         System.out.println("password from data provider: " + sPassword);
+
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).click();
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).sendKeys(sUsername);
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).click();
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).sendKeys(sPassword);
+        Thread.sleep(2000);
+        driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"test-LOGIN\"]")).click();
+        if(sUsername.equalsIgnoreCase("locked_out_user")){
+            Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Sorry, this user has been locked out.\"]")).isDisplayed());
+        }
     }
 }

@@ -7,6 +7,7 @@
     <parameter name="inputdata" value="testdata from suite level" />
     <test name="TestAndorid">
         <parameter name="inputdata" value="test data" />
+        <parameter name="inputdata2" value="test data 2" />
         <classes>
             <class name="parameterisationdemo.DemoTestParameterisation" />
         </classes>

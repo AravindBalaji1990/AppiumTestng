@@ -51,16 +51,16 @@ public class DataproviderArrayTestDemo {
     }
 
 
-    @Test(dataProvider = "authenticationData")
+    @Test(dataProvider = "authenticationwithpropertiesfilemultipledata")
     public void testcase1(String sUsername, String sPassword) throws InterruptedException {
-        String[] data = null;
-        if(sUsername.contains("#")) {
-            data = sUsername.split("#");
-            System.out.println("username : " + data[0] );
-            sUsername = data[0];
-        }else{
-            System.out.println("username : " + sUsername);
-        }
+//        String[] data = null;
+//        if(sUsername.contains("#")) {
+//            data = sUsername.split("#");
+//            System.out.println("username : " + data[0] );
+//            sUsername = data[0];
+//        }else{
+//            System.out.println("username : " + sUsername);
+//        }
         System.out.println("password : "+sPassword);
         System.out.println("username from data provider : " + sUsername);
         System.out.println("password from data provider: " + sPassword);

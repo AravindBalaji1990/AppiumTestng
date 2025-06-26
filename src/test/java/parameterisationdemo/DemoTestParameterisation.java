@@ -16,8 +16,9 @@ public class DemoTestParameterisation {
     AndroidDriver driver;
 
     @BeforeSuite
-    @Parameters({"packagename", "activityname", "devicename", "inputdata"})// how many parameter you have givene in the xml same number should be here
-    public void start(String packagename, String activityname, String devicename,String data) throws MalformedURLException, InterruptedException {
+    @Parameters({"packagename", "activityname", "devicename", "inputdata"})
+// how many parameter you have givene in the xml same number should be here
+    public void start(String packagename, String activityname, String devicename, String data) throws MalformedURLException, InterruptedException {
         System.out.println("this is the before method");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
@@ -40,6 +41,13 @@ public class DemoTestParameterisation {
 
     }
 
+    @BeforeClass
+    @Parameters({"inputdata2"})
+    public void demo(String data) {
+        System.out.println("this from the before class : " + data);
+
+    }
+
 
     @Test
     @Parameters({"inputdata"})
@@ -57,4 +65,17 @@ public class DemoTestParameterisation {
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id='io.appium.android.apis:id/edit1']")).sendKeys(valuetiinput);
 
     }
+
+    @Test
+    @Parameters({"inputdata2"})
+    public void testcase2(String valuetiinput) throws InterruptedException {
+        System.out.println("this is the first case 2");
+        System.out.println("the value form xml : " + valuetiinput);
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id='io.appium.android.apis:id/edit1']")).clear();
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id='io.appium.android.apis:id/edit1']")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id='io.appium.android.apis:id/edit1']")).sendKeys(valuetiinput);
+
+    }
+
+
 }
