@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test name="Test dataproviders demo">
         <classes>
-            <class name="dataproviderarraydemo.DataproviderArrayTestDemo_Basic"/>
+            <class name="dataproviderdemo.DataproviderDemoTest_swaglab"/>
         </classes>
     </test>
 </suite>

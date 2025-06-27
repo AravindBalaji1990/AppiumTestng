@@ -35,7 +35,7 @@ public class ExcelUtilReadWrite {
     //Generic method to read the data
     public static Object[][] getTableArray(String FilePath, String SheetName) throws Exception {
         // intialisation to store the credentials from the excel and to be used int he dataprovider
-        String[][] tabArray = null;
+        String[][] tabArray = null;// this will carry the final result read from the excel sheet
         try {
             FileInputStream ExcelFile = new FileInputStream(FilePath);
             // Access the required test data sheet
@@ -45,8 +45,9 @@ public class ExcelUtilReadWrite {
             int ci, cj;
             // Total number of rows - which are filled in
             int totalRows = ExcelWSheet.getLastRowNum();
-            // From the rows how many columns/cells
+            // From the rows how many columns/cells are with data
             int noOfColumns = ExcelWSheet.getRow(totalRows).getLastCellNum();
+
             int col = noOfColumns ;
             tabArray = new String[totalRows][col];
             ci = 0;
@@ -56,7 +57,7 @@ public class ExcelUtilReadWrite {
                 // Column values
                 for (int j = 0; j < col; j++, cj++) {
                     // it will retrive the cell data based on the ci and cj index values
-                    tabArray[ci][cj] = getCellData(i, j);
+                    tabArray[ci][cj] = getCellData(i, j);// user defined method used it to seggregate the data
                     System.out.println("The values for i and j : " + tabArray[ci][cj]);
                 }
             }
