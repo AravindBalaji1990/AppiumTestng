@@ -9,11 +9,11 @@
 <!--            <class name="testngparallelwithTest.ParallelTestingTests2" />-->
         </classes>
     </test>
-    <test name="TestAndoridSimulator">
-        <classes>
-            <class name="testngparallelwithTest.ParallelTestingTestsios" />
-        </classes>
-    </test>
+<!--    <test name="TestAndoridSimulator">-->
+<!--        <classes>-->
+<!--            <class name="testngparallelwithTest.ParallelTestingTestsios" />-->
+<!--        </classes>-->
+<!--    </test>-->
     <test name="TestAndroidRealDevice2">
         <classes>
             <class name="testngparallelwithTest.ParallelTestingTestsEmulator" />

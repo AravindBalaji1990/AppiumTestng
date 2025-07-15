@@ -46,7 +46,7 @@ public class DataproviderDemoTest_swaglab {
 
     @DataProvider(name = "AuthenticationDatafromexcel")
     public Object[][] credentials() throws Exception {
-        Object[][] datafromexcel = ExcelUtilReadWrite.getTableArray(System.getProperty("user.dir")+"/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx", "Credentials");
+        Object[][] datafromexcel = ExcelUtilReadWrite.getTableArray(System.getProperty("user.dir") + "/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx", "Credentials");
         System.out.println("data form Excel :" + datafromexcel);
         return datafromexcel;
     }
@@ -61,34 +61,45 @@ public class DataproviderDemoTest_swaglab {
 
         try {
             j++;
-           driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).click();
+            driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).click();
             driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).sendKeys(sUsername);
             driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).click();
             driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).sendKeys(sPassword);
 
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"test-LOGIN\"]")).click();
-            Thread.sleep(10000);
+            Thread.sleep(5500);
             try {
                 if (driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"PRODUCTS\"]")).isDisplayed()) {
                     // once the login is successfull the global varibale is marked true
-                    result = true;
+                    result = true; // when result is tru we updatet he excel sheet to PASS
                     // we set the data over to the variable temporarily and which can be reused
                     System.setProperty("result", String.valueOf(result));
                 }
-            }catch (Exception e){
-                result = false;
+            } catch (Exception e) {
+                result = false; // Update the excel sheet to FAIL
+                if (sUsername.equalsIgnoreCase("locked_out_user")) {
+                    Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Sorry, this user has been locked out.\"]")).isDisplayed());
+                } else if (sUsername.equalsIgnoreCase("12345")) {
+                    Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]")).isDisplayed());
+
+                } else {
+                    Assert.assertTrue(false, "NO CONDITION IS MATCHED");
+                }
+
+
                 // we set the data over to the variable temporarily and which can be reused
-                System.setProperty("result", String.valueOf(result));
+                System.setProperty("result", String.valueOf(result)+" -> ERROR -> "+driver.findElement(AppiumBy.xpath(driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='test-Error message']/android.widget.TextView")).getText())));
+
             }
         } catch (Exception e) {
 
         } finally {
             if (result == true && System.getProperty("result").equalsIgnoreCase("true")) {
-                ExcelUtilReadWrite.setCellData("Pass", j, resultcolumn, "Credentials", System.getProperty("user.dir")+"/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx");
+                ExcelUtilReadWrite.setCellData("Pass", j, resultcolumn, "Credentials", System.getProperty("user.dir") + "/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx");
 //        j++;
             } else {
-                ExcelUtilReadWrite.setCellData("Fail", j, resultcolumn, "Credentials", System.getProperty("user.dir")+"/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx");
+                ExcelUtilReadWrite.setCellData("Fail", j, resultcolumn, "Credentials", System.getProperty("user.dir") + "/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx");
 //        j++;
             }
 

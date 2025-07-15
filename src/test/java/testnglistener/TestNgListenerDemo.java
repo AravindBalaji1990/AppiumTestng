@@ -5,7 +5,7 @@ import org.testng.*;
 public class TestNgListenerDemo implements ITestListener, ISuiteListener, IInvokedMethodListener {
     // *************ISuiteInvocation Logic Begins*****************
     public void onStart(ISuite arg0) {
-//        Reporter.log("message", true);
+//        Reporter.log("message", true/false);
         Reporter.log("About to begin executing Onstart of Suite (onStart suite)" + arg0.getName(), true);
         Reporter.log("About to begin executing Onstart of Suite (onStart suite)" + arg0.getOutputDirectory(), true);
     }
@@ -82,10 +82,13 @@ public class TestNgListenerDemo implements ITestListener, ISuiteListener, IInvok
 
             case ITestResult.SUCCESS:
                 status = "Passed successfully 100%".toUpperCase();
+//                DemoRetryCheck demoretry = new DemoRetryCheck();
+//                demoretry.retry(result);
                 break;
 
             case ITestResult.FAILURE:
                 status = "Failed 100%".toUpperCase();
+
                 break;
 
             case ITestResult.SKIP:

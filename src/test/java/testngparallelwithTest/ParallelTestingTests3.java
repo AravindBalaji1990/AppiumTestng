@@ -59,7 +59,7 @@ public class ParallelTestingTests3 {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
 //        options.setDeviceName("emulator-5554");
-        options.setUdid("H0C9FI1LV01B0300012");
+        options.setUdid("55ZTINFYRW5T6DNR");
         options.setAutoGrantPermissions(true);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
 //        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");

@@ -7,19 +7,23 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SimplePOM_AND {
-    static AndroidDriver driver;
+    //public varaible so that it can be used in the below methods
+    public static AndroidDriver driver;
     // identification of element
     //identify both andorid and ios
 //    @FindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Username\"]")
 //    static WebElement txt_username;
     @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Username\"]")
-    static WebElement txt_username;
+    static WebElement txt_username; // they belog to the entire class where it exists
+//    private WebElement txt_username; // they belog to the entire class where it exists
 
     // identify only andorid
     @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Password\"]")
@@ -31,8 +35,9 @@ public class SimplePOM_AND {
 //    @iOSXCUITFindBy(xpath = "")
 //    static WebElement name;
 
-    @Test
-    public void testcase() throws MalformedURLException, InterruptedException {
+
+    @BeforeMethod
+    public void startUIAutomation() throws MalformedURLException, InterruptedException {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
         options.setDeviceName("29221JEGR00379");
@@ -42,7 +47,16 @@ public class SimplePOM_AND {
         options.setAppWaitForLaunch(true);
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         Thread.sleep(3000);
+    }
 
+    @AfterMethod
+    public void stopUIAutomation() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.quit();
+    }
+
+    @Test
+    public void testcase() throws MalformedURLException, InterruptedException {
         // this - it represents the class in which it is declared
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 
@@ -55,8 +69,6 @@ public class SimplePOM_AND {
         }
         btn_login.click();
 
-        Thread.sleep(3000);
-        driver.quit();
 
     }
 
