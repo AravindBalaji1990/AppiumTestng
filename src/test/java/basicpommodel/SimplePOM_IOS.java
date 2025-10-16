@@ -57,7 +57,7 @@ public class SimplePOM_IOS {
     @AfterMethod
     public void stopIOS() throws InterruptedException {
         Thread.sleep(3000);
-        driver.quit();
+//        driver.quit();
     }
 
     @Test

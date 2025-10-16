@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Andorid Demo">
-    <test name="Api Demos App">
+<suite name="All Test Suite">
+    <test name="sample run">
         <classes>
-            <class name="testpacktestngdependsfeature.SampleScript_timeout"></class>
+            <class name="basicannotationdemo.TestAndroid"/>
         </classes>
     </test>
 </suite>

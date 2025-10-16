@@ -1,0 +1,35 @@
+20:31:48.774 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/Library/Caches/JetBrains/IdeaIC2023.2/temp-testng-customsuite.xml
+
+20:31:48.799 [main] INFO  slf4jDemo.Slf4jDemoRun - this is a informaiton message from slf4j
+20:31:48.802 [main] ERROR slf4jDemo.Slf4jDemoRun - this is a error message from slf4j
+19:25:58.673 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:27:46.395 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:37:51.111 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:38:11.221 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:39:12.451 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:40:32.831 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:44:34.076 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:45:32.584 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:55:34.816 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:57:39.979 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
