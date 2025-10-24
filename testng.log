@@ -33,3 +33,30 @@
 19:57:39.979 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
 
+19:22:03.037 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_groups.xml
+
+19:28:46.821 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng.xml
+
+19:49:29.246 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_parameterisationbasic.xml
+
+19:50:25.956 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_parameterisationbasic.xml
+
+19:51:05.182 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_parameterisationbasic.xml
+
+19:52:31.888 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_parameterisationbasic.xml
+
+19:41:29.298 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_dataprovider.xml
+
+19:43:05.587 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_dataprovider.xml
+
+19:56:40.223 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_dataprovider.xml
+

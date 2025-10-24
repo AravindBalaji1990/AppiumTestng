@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="sample run">
+    <test name="Depends on mehtod example">
         <classes>
-            <class name="basicannotationdemo.TestAndroid"/>
+            <class name="testpacktestngdependsfeature.SampleScript_dependsonmethod">
+            </class>
         </classes>
     </test>
 </suite>

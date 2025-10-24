@@ -41,12 +41,6 @@ public class DemoTestParameterisation {
 
     }
 
-    @BeforeClass
-    @Parameters({"inputdata2"})
-    public void demo(String data) {
-        System.out.println("this from the before class : " + data);
-
-    }
 
 
     @Test

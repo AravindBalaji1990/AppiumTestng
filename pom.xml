@@ -105,9 +105,9 @@
                 <configuration>
                     <suiteXmlFiles>
 <!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
-<!--                        <suiteXmlFile>testng_dataprovider.xml</suiteXmlFile>-->
+                        <suiteXmlFile>testng_dataprovider.xml</suiteXmlFile>
 <!--                        <suiteXmlFile>testng_listener.xml</suiteXmlFile>-->
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

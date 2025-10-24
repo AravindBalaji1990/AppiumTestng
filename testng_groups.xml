@@ -4,7 +4,7 @@
     <test name="Test">
         <groups>
             <run>
-                <exclude name="smoketest" />
+                <include name="smoketest" />
                 <include name="regressiontest" />
                 <include name="end2endtest" />
             </run>

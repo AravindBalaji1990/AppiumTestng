@@ -53,6 +53,9 @@ public class DataproviderArrayTestDemo_Basic {
 
     }
 
+    // each @Dataprovider is represented by unique names
+    // these unique name should be used in a @test to be referred
+    // we can have n number of data providers
     @DataProvider(name = "AuthenticationData")
     public Object[][] credentials() {
         return new Object[][]{{"standard_user", "secret_sauce"}, {"locked_out_user", "secret_sauce"}, {"problem_user", "secret_sauce"}};
@@ -69,7 +72,7 @@ public class DataproviderArrayTestDemo_Basic {
     }
 
 
-    @Test(dataProvider = "lockeduser")
+    @Test(dataProvider = "AuthenticationData")
     public void testcase02(String sUsername, String sPassword) throws InterruptedException {
 
         System.out.println("username from data provider : " + sUsername);

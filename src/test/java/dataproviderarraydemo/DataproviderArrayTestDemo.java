@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.time.Duration;
 public class DataproviderArrayTestDemo {
 
     AndroidDriver driver;
+    // to read the property file we create a object here
     ReadProperties obj_readpropoerties = new ReadProperties();
 
     @BeforeMethod
@@ -73,16 +75,10 @@ public class DataproviderArrayTestDemo {
 
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).click();
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).sendKeys(sPassword);
-
-    }
-
-//    @Test(dataProvider = "authenticationwithpropertiesfilemultipledata")
-    public void testcase02(String sUsername, String sPassword) throws InterruptedException {
-        System.out.println("username from data provider : " + sUsername);
-        System.out.println("password from data provider: " + sPassword);
-        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).click();
-        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).sendKeys(sUsername);
-        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).click();
-        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).sendKeys(sPassword);
+        Thread.sleep(3000);
+        driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"test-LOGIN\"]")).click();
+        if(sUsername.equalsIgnoreCase("locked_out_user")){
+            Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Sorry, this user has been locked out.\"]")).isDisplayed());
+        }
     }
 }
