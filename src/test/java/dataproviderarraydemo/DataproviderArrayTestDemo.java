@@ -30,7 +30,6 @@ public class DataproviderArrayTestDemo {
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-
     }
 
     @AfterMethod
@@ -40,7 +39,8 @@ public class DataproviderArrayTestDemo {
 
     }
 
-    @DataProvider(name = "authenticationwithpropertiesfilemultipledata")
+    //dataprovider to read the data from excel and stoer it as multi dimentional array
+    @DataProvider(name = "authenticationlogin")
     public Object[][] propertiesData() throws IOException {
         return new Object[][] { { obj_readpropoerties.datafromProperoties("swaglabconfig").getProperty("username1"), obj_readpropoerties.datafromProperoties("swaglabconfig").getProperty("password")},
                 { obj_readpropoerties.datafromProperoties("swaglabconfig").getProperty("username2"), obj_readpropoerties.datafromProperoties("swaglabconfig").getProperty("password")},

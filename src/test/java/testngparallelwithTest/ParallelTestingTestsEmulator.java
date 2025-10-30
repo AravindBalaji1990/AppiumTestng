@@ -27,7 +27,7 @@ static AndroidDriver driver;
 //        options.setDeviceName("emulator-5554");
 //        options.setUdid("emulator-5554");
 //        options.setCapability("systemPort",8201);
-        options.setUdid("55ZTINFYRW5T6DNR");
+        options.setUdid("emulator-5554");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/android-app.apk");
 //        options.setAppPackage("com.saucelabs.mydemoapp.rn");

@@ -26,9 +26,9 @@ public class ParallelTestingTestsios {
         XCUITestOptions options = new XCUITestOptions();
         options.setPlatformVersion("18.4");
         options.setDeviceName("iPhone 16");
-        options.setUdid("5C03BC31-8D66-45E2-B899-4BEBC456A0A7");
-        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/ios-app.zip");
-//        options.setBundleId("com.saucelabs.mydemoapp.rn");
+        options.setUdid("BAB4B426-2E41-4A08-9557-7A332F0A6833");
+//        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/ios-app.zip");
+        options.setBundleId("com.apple.reminders");
 //        options.setUseNewWDA(false);
 //        options.setAutoWebview(true);
 //        options.setAppPushTimeout(Duration.ofMillis(50000));
@@ -50,6 +50,6 @@ public class ParallelTestingTestsios {
     public void testcase1() {
         System.out.println("this is  my testcase");
 //        WaitUtility.waitforElement(driver,60,By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]") );
-        Assert.assertTrue(driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"New Reminder\"]")).isDisplayed());
     }
 }

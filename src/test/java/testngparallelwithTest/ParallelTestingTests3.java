@@ -44,14 +44,14 @@ public class ParallelTestingTests3 {
 //        options.setAppWaitForLaunch(true);
 //        options.setAppWaitDuration(Duration.ofMillis(50000));
         options.setNewCommandTimeout(Duration.ofSeconds(60));
-       AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+        AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 //        WaitUtility.waitforElement(driver,60,AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView") );
 //        WebElement ele = driver.findElement(AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView"));
 //        Assert.assertTrue(ele.isDisplayed());
         Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed());
     }
 
-    @Test
+//    @Test
     public void testcase_realdevice() throws MalformedURLException {
         System.out.println("this is  my testcase");
         System.out.println("this is starts");
@@ -59,7 +59,7 @@ public class ParallelTestingTests3 {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
 //        options.setDeviceName("emulator-5554");
-        options.setUdid("55ZTINFYRW5T6DNR");
+//        options.setUdid("55ZTINFYRW5T6DNR");
         options.setAutoGrantPermissions(true);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
 //        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
@@ -78,27 +78,36 @@ public class ParallelTestingTests3 {
 //    //@Test
 //    public void testcase2() {
 //        System.out.println("this is  my testcase");
-////        WaitUtility.waitforElement(driver,60,AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView") );
-////        WebElement ele = driver.findElement(AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView"));
-////        Assert.assertTrue(ele.isDisplayed());
+
+    /// /        WaitUtility.waitforElement(driver,60,AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView") );
+    /// /        WebElement ele = driver.findElement(AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView"));
+    /// /        Assert.assertTrue(ele.isDisplayed());
 //        Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Text\"]")).isDisplayed());
 //    }
 
-    public void testcase3() throws MalformedURLException {
+    @Test
+    public void testcase3() throws MalformedURLException, InterruptedException {
         System.out.println("this is starts");
         XCUITestOptions options = new XCUITestOptions();
-        options.setDeviceName("iPhone 16 Plus");
-        options.setUdid("9C4CF5F8-F6CD-44FC-AC73-5B595592AD1B");
+        options.setPlatformVersion("18.4");
+        options.setDeviceName("iPhone 16");
+        options.setUdid("BAB4B426-2E41-4A08-9557-7A332F0A6833");
 //        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/ios-app.zip");
-        options.setBundleId("com.saucelabs.mydemoapp.rn");
-        options.setUseNewWDA(false);
+        options.setBundleId("com.apple.reminders");
+//        options.setUseNewWDA(false);
 //        options.setAutoWebview(true);
-        options.setAppPushTimeout(Duration.ofMillis(50000));
+//        options.setAppPushTimeout(Duration.ofMillis(50000));
 
 //        options.setBundleId("com.moataz.dailycheck");
 
-      IOSDriver  driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
-        Assert.assertTrue(driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"plus.circle\"]")).isDisplayed());
+        IOSDriver driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
+
+        Thread.sleep(3000);
+
+        Assert.assertTrue(driver.findElement(By.xpath("//XCUIElementTypeButton[@name=\"New Reminder\"]")).isDisplayed());
+        Thread.sleep(3000);
+
+        driver.quit();
 
 
     }

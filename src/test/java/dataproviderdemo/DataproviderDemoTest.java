@@ -29,7 +29,9 @@ public class DataproviderDemoTest {
         options.setPlatformName("Android");
         options.setDeviceName("29221JEGR00379");
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
+//        options.setApp("/Users/aravindbalaji/Documents/Appium/Sample App/android-app.apk");
+        options.setAppActivity("com.swaglabsmobileapp.MainActivity");
+        options.setAppPackage("com.swaglabsmobileapp");
         options.setAppWaitForLaunch(true);
         options.setAppWaitDuration(Duration.ofMillis(50000));
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
@@ -45,17 +47,17 @@ public class DataproviderDemoTest {
 
     @DataProvider(name = "AuthenticationDatafromexcel")
     public Object[][] credentials() throws Exception {
-        Object[][] datafromexcel = ExcelUtilReadWrite.getTableArray(System.getProperty("user.dir")+"/src/test/resources/configproperties/TestData.xlsx", "Credentials");
+        Object[][] datafromexcel = ExcelUtilReadWrite.getTableArray(System.getProperty("user.dir") + "/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx", "Credentials");
         System.out.println("data form Excel :" + datafromexcel);
         return datafromexcel;
     }
 
 
     @Test(dataProvider = "AuthenticationDatafromexcel")
-    public void testcase1(String sUsername, String sPassword, String data) throws Exception {
+    public void testcase1(String sUsername, String sPassword) throws Exception {
         System.out.println("username : " + sUsername);
         System.out.println("password : " + sPassword);
-        System.out.println("Keyword data : " + data);
+
         Thread.sleep(5000);
 //            int j = 0;
 

@@ -49,7 +49,7 @@ public class ExcelUtilReadWrite {
             int noOfColumns = ExcelWSheet.getRow(totalRows).getLastCellNum();
 
             int col = noOfColumns ;
-            tabArray = new String[totalRows][col];
+            tabArray = new String[totalRows][col]; // to specify the total items for the 2 dimentional array
             ci = 0;
             // Row values
             for (int i = 1; i <= totalRows; i++, ci++) {
