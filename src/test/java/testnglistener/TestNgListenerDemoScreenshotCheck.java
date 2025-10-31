@@ -1,6 +1,5 @@
 package testnglistener;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -9,7 +8,6 @@ import org.testng.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 
 public class TestNgListenerDemoScreenshotCheck implements ITestListener, ISuiteListener, IInvokedMethodListener {
     AndroidDriver driver;
@@ -89,7 +87,7 @@ public class TestNgListenerDemoScreenshotCheck implements ITestListener, ISuiteL
 
         String status = null;
         Object testclass = result.getInstance();// where the driver is running
-        driver = ((TestListener) testclass).driver;
+        driver = ((TestListenerSampleRun) testclass).driver;
 
         switch (result.getStatus()) {
 

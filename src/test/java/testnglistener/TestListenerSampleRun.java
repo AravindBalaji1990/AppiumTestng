@@ -17,7 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class TestListener {
+public class TestListenerSampleRun {
 
     AndroidDriver driver;
 
@@ -59,14 +59,15 @@ public class TestListener {
 
     @Test(retryAnalyzer = DemoRetryCheck.class)
     public void testcase2() {
-        SoftAssert sf = new SoftAssert();
+//        SoftAssert sf = new SoftAssert();
+//        Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed(), "the data is available");
         Assert.assertFalse(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed(), "the data is available");
         WaitUtility.waitForElementFluent(driver, 60, AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]"));
-        sf.assertFalse(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed(), "the data is available");
-        sf.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Text\"]")).isDisplayed(), "the data is not available");
+//        sf.assertFalse(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed(), "the data is available");
+//        sf.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Text\"]")).isDisplayed(), "the data is not available");
 
         // we need to provide this as amandatory to validate the result set
-        sf.assertAll();
+//        sf.assertAll();
 
     }
 

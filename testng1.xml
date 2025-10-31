@@ -6,7 +6,7 @@
     </listeners>
     <test name="Test">
         <classes>
-            <class name="testnglistener.TestListener"/>
+            <class name="testnglistener.TestListenerSampleRun"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

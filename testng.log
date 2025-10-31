@@ -90,3 +90,15 @@
 19:44:49.599 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_parameterisation_methods.xml
 
+19:40:08.195 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_listener.xml
+
+19:51:02.515 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_listener2.xml
+
+19:52:27.132 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_listener2.xml
+
+19:53:23.652 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_listener2.xml
+

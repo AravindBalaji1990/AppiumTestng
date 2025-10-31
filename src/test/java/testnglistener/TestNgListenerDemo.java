@@ -21,22 +21,22 @@ public class TestNgListenerDemo implements ITestListener, ISuiteListener, IInvok
     // This belongs to ITestListener and will execute before starting of Test
     // set/batch
     public void onStart(ITestContext arg0) {
-//        Reporter.log("About to begin executing onstart of Test (onStart Itest)" + arg0.getName(), true);
+        Reporter.log("About to begin executing onstart of Test (onStart Itest)" + arg0.getName(), true);
     }
 
     // This belongs to ITestListener and will execute, once the Test set/batch
     // is finished
 
-//    public void onFinish(ITestContext arg0) {
-////        Reporter.log("Completed executing onfinish of test (onFinish Itest)" + arg0.getName(), true);
-//    }
+    public void onFinish(ITestContext arg0) {
+        Reporter.log("Completed executing onfinish of test (onFinish Itest)" + arg0.getName(), true);
+    }
 
     // This belongs to ITestListener and will execute before the main test start
     // (@Test)
-//    public void onTestStart(ITestResult arg0) {
-//        Reporter.log("The execution of the main test starts now (onteststart Itest) : " + arg0.getName(), true);
-//        Reporter.log("The execution of the main test starts get the status (onteststart Itest) : " + arg0.getStatus(), true);
-//    }
+    public void onTestStart(ITestResult arg0) {
+        Reporter.log("The execution of the main test starts now (onteststart Itest) : " + arg0.getName(), true);
+        Reporter.log("The execution of the main test starts get the status (onteststart Itest) : " + arg0.getStatus(), true);
+    }
 
     // This belongs to ITestListener and will execute only when the test is pass
 
@@ -58,8 +58,8 @@ public class TestNgListenerDemo implements ITestListener, ISuiteListener, IInvok
     }
 
     // This is just a piece of shit, ignore this
-//    public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
-//    }
+    public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
+    }
 
     // This is the method which will be executed in case of test pass or fail
 
