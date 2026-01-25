@@ -17,6 +17,7 @@ import java.time.Duration;
 public class TestAndroid {
     public static AndroidDriver driver;
 
+    // Not all the pre and post requisites are required for all class - depends ont he project
     @BeforeMethod
     public void before() throws MalformedURLException {
         UiAutomator2Options options = new UiAutomator2Options();
@@ -38,7 +39,7 @@ public class TestAndroid {
 
     }
 
-    @Test(enabled = false)
+    @Test
     public void testcase01() {
 
         WebElement element_view = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]"));
@@ -49,7 +50,7 @@ public class TestAndroid {
         }
     }
 
-    @Test(priority = 1)
+    @Test
     public void testcase02() {
 
         WebElement element_view = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Text\"]"));

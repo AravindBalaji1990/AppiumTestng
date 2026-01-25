@@ -48,6 +48,7 @@ public class DemoRun1 {
 
     }
 
+    // @Test will excute for thetestcaseswe have - it canbe multiple
     @Test
     public void testcase01(){
         System.out.println("this is testcase01");

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests" thread-count="2">
-    <test name="test run ios">
+<suite name="All Test Suite">
+<!--    <test name="test demo andorid">-->
+<!--        <classes>-->
+<!--            <class name="basicannotationdemo.TestAndroid"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="test demo ios">
         <classes>
-            <class name="basicpommodel.SimplePOM_IOS"/>
-        </classes>
-    </test>
-    <test name="test run Android">
-        <classes>
-            <class name="basicpommodel.SimplePOM_AND"/>
+            <class name="basicannotationdemo.TestIOS"></class>
         </classes>
     </test>
 </suite>
