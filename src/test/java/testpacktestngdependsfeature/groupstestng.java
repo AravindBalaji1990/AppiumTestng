@@ -9,17 +9,17 @@ public class groupstestng {
     }
 
     @Test(groups = { "smoketest" })
-    public void smoke1() {
+    public void smokeA() {
         System.out.println("smoketest smoke1");
     }
 
     @Test(groups = { "smoketest" })
-    public void smoke2() {
+    public void smokeB() {
         System.out.println("smoketest smoke2");
     }
 
     @Test(groups = { "smoketest" })
-    public void smoke3() {
+    public void smokeC() {
         System.out.println("smoketest smoke3");
     }
 

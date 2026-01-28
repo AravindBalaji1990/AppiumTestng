@@ -4,13 +4,15 @@
     <test name="Test">
         <groups>
             <run>
-                <include name="smoketest" />
-                <include name="regressiontest" />
-                <include name="end2endtest" />
+                <!--                include tag will run the @test marked with the name -->
+                <!--                exclude tag will not  run the @test marked with the name-->
+                <include name="sanity"/>
+                <include name="smoke"/>
+                <exclude name="regression"/>
             </run>
         </groups>
         <classes>
-            <class name="testpacktestngdependsfeature.groupstestng" />
+            <class name="testpacktestngdependsfeature.SampleScript"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

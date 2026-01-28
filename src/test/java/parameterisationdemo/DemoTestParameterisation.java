@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 
@@ -14,15 +15,26 @@ import java.time.Duration;
 
 public class DemoTestParameterisation {
     AndroidDriver driver;
+    public static AppiumDriverLocalService service;
+
+    //    @BeforeSuite(alwaysRun = true)
+    public void startAppium() {
+        System.out.println("----starting appium---");
+        // the below code will check for the path of the default appium,sdk,ios
+        service = AppiumDriverLocalService.buildDefaultService();
+        // then start the appium server - as we start in terminal
+        service.start();
+    }
 
     @BeforeSuite
     @Parameters({"packagename", "activityname", "devicename", "inputdata"})
 // how many parameter you have givene in the xml same number should be here
     public void start(String packagename, String activityname, String devicename, String data) throws MalformedURLException, InterruptedException {
+        startAppium();
         System.out.println("this is the before method");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
-        options.setDeviceName(devicename);// mentioned here
+        options.setUdid(devicename);// mentioned here
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setAppPackage(packagename);
         options.setAppActivity(activityname);
@@ -39,8 +51,9 @@ public class DemoTestParameterisation {
         System.out.println("this is the after method");
         driver.quit();
 
-    }
+        service.stop();
 
+    }
 
 
     @Test

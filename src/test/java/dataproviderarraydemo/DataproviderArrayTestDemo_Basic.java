@@ -32,7 +32,7 @@ public class DataproviderArrayTestDemo_Basic {
     }
 
     @BeforeMethod
-    public void start() throws IOException, InterruptedException {
+    public void startMethod() throws IOException, InterruptedException {
         System.out.println("this is the before");
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
@@ -46,7 +46,7 @@ public class DataproviderArrayTestDemo_Basic {
     }
 
     @AfterMethod
-    public void teardown() throws InterruptedException {
+    public void teardownMethod() throws InterruptedException {
         Thread.sleep(5000);
         System.out.println("this is the after");
         driver.quit();
@@ -61,7 +61,7 @@ public class DataproviderArrayTestDemo_Basic {
         return new Object[][]{{"standard_user", "secret_sauce"}, {"locked_out_user", "secret_sauce"}, {"problem_user", "secret_sauce"}};
     }
 
-    @DataProvider(name = "authenticationgooduser")
+    @DataProvider(name = "authentication_valid_user")
     public Object[][] authData() {
         return new Object[][]{{"standard_user", "secret_sauce"}};
     }
@@ -71,7 +71,7 @@ public class DataproviderArrayTestDemo_Basic {
         return new Object[][]{{"locked_out_user", "secret_sauce"}};
     }
 
-
+    //Inside the @test we can refere the dataprovider as below -dataprovider = "name"
     @Test(dataProvider = "AuthenticationData")
     public void testcase02(String sUsername, String sPassword) throws InterruptedException {
 

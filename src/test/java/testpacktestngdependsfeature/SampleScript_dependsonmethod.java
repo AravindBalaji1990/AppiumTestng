@@ -50,14 +50,14 @@ public class SampleScript_dependsonmethod {
         WebElement element = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"NFC\"]"));
         Assert.assertTrue(element.isDisplayed(), "element is not displayed on the page");
     }
-    @Test(description = "verify the Media button",dependsOnMethods = {"verifyGraphicsButton"})
+    @Test(description = "verify the Media button",dependsOnMethods = {"verifyGraphicsButton"}, alwaysRun = true)
     public void verifyMediaButton() throws MalformedURLException {
         WebElement element = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Graphics\"]"));
         Assert.assertTrue(element.isDisplayed(), "element is not displayed on the page");
     }
     @Test(description = "verify the Graphics button")
     public void verifyGraphicsButton() throws MalformedURLException {
-        WebElement element = this.driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Graphicsss\"]"));
+        WebElement element = this.driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Graphicsssss\"]"));
         Assert.assertTrue(element.isDisplayed(), "element is not displayed on the page");
     }
 
