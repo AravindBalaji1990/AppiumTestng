@@ -12,10 +12,11 @@ import java.io.IOException;
 
 public class ExcelUtilReadWrite {
 
-    private static XSSFSheet ExcelWSheet;
     private static XSSFWorkbook ExcelWBook;
-    private static XSSFCell Cell;
+    private static XSSFSheet ExcelWSheet;
     private static XSSFRow Row;
+    private static XSSFCell Cell;
+
 
     // This method is to set the File path and to open the Excel file, Pass
     // Excel Path and Sheetname as Arguments to this method
@@ -47,8 +48,7 @@ public class ExcelUtilReadWrite {
             int totalRows = ExcelWSheet.getLastRowNum();
             // From the rows how many columns/cells are with data
             int noOfColumns = ExcelWSheet.getRow(totalRows).getLastCellNum();
-
-            int col = noOfColumns ;
+            int col = noOfColumns;
             tabArray = new String[totalRows][col]; // to specify the total items for the 2 dimentional array
             ci = 0;
             // Row values
@@ -61,9 +61,7 @@ public class ExcelUtilReadWrite {
                     System.out.println("The values for i and j : " + tabArray[ci][cj]);
                 }
             }
-        }
-
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("Could not read the Excel sheet");
             e.printStackTrace();
         } catch (IOException e) {

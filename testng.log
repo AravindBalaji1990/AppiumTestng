@@ -144,3 +144,9 @@
 20:24:09.041 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_groups.xml
 
+22:04:13.819 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_dataprovider.xml
+
+22:08:31.208 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/aravindbalaji/IdeaProjects/TestNgWithMaven/testng_dataprovider.xml
+

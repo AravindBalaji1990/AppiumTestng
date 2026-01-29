@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -19,6 +20,23 @@ public class DataproviderDemoTest_swaglab {
     boolean result = false;// global variable declared where the result afetr running hte data will be updated
     int resultcolumn = 2;// cell in the column where the result should be updated
     int j = 0; // this will iterate through the rows and update the result
+
+
+    public static AppiumDriverLocalService service;
+
+    @BeforeSuite(alwaysRun = true)
+    public void startAppium() {
+        System.out.println("----starting appium---");
+        // the below code will check for the path of the default appium,sdk,ios
+        service = AppiumDriverLocalService.buildDefaultService();
+        // then start the appium server - as we start in terminal
+        service.start();
+    }
+    @AfterSuite(alwaysRun = true)
+    public void stopAppium() {
+        service.stop();
+
+    }
 
     @BeforeMethod
     public void start() throws MalformedURLException, InterruptedException {
@@ -95,7 +113,7 @@ public class DataproviderDemoTest_swaglab {
         } catch (Exception e) {
 
         } finally {
-            if (result == true && System.getProperty("result").equalsIgnoreCase("true")) {
+            if (result == true) {
                 ExcelUtilReadWrite.setCellData("Pass", j, resultcolumn, "Credentials", System.getProperty("user.dir") + "/src/test/resources/configproperties/TestData_Swaglab_Data.xlsx");
 //        j++;
             } else {
