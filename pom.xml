@@ -106,7 +106,7 @@
                     <suiteXmlFiles>
 <!--                        <suiteXmlFile>testng_basic.xml</suiteXmlFile>-->
 <!--                        <suiteXmlFile>testng_dataprovider.xml</suiteXmlFile>-->
-                        <suiteXmlFile>testng_dataprovider.xml</suiteXmlFile>
+                        <suiteXmlFile>testngdemo.xml</suiteXmlFile>
 <!--                        <suiteXmlFile>testng_basic.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>

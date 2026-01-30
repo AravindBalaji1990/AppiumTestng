@@ -11,6 +11,7 @@ public class DemoRetryCheck implements IRetryAnalyzer {
     public boolean retry(ITestResult result){
         // we are forcefully running it 2 times whether ti has been passed or failed it doesnt matter
         System.out.println("-------->"+result.getStatus());
+        //result.getStatus() == 2 this represents the status as failure
 //        if(result.getStatus() == 2) {
             if (countretry < maximumretry) {
                 System.out.println("I am re-running");

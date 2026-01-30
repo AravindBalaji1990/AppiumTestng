@@ -7,12 +7,15 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class SimplePOM_AND {
     //public varaible so that it can be used in the below methods
@@ -67,7 +70,9 @@ public class SimplePOM_AND {
         if (txt_password.isDisplayed()) {
             txt_password.sendKeys("secret_sauce");
         }
-        btn_login.click();
+
+        new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.elementToBeClickable(btn_login)).click();
+//        btn_login.click();
 
 
     }

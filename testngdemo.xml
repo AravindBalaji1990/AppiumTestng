@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="/Users/aravindbalaji/IdeaProjects/TestNgWithMaven/src/test/java/testpacktestng/DemoTest1.java">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteListener">
+    <listeners>
+        <listener class-name="testnglistener.TestNgListenerDemo"></listener>
+        <!--        <listener class-name="testnglistener.RetryListener"></listener>-->
+    </listeners>
+    <test name="TestToRun">
         <classes>
-            <class name="testpacktestng.DemoTest1">
-                <methods>
-                    <include name="testcase1"/>
-                    <include name="testcase2"/>
-                </methods>
-            </class>
+            <class name="basicpommodel.SimplePOM_AND" />
         </classes>
-    </test>
-</suite>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
