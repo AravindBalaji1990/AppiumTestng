@@ -27,7 +27,7 @@ public class ParallelTestingTests3 {
     }
 
 
-    @Test
+    @Test(description = "Android device run")
     public void testcase1() throws MalformedURLException {
         System.out.println("this is  my testcase");
         System.out.println("this is starts");
@@ -75,26 +75,17 @@ public class ParallelTestingTests3 {
         Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).isDisplayed());
     }
 
-//    //@Test
-//    public void testcase2() {
-//        System.out.println("this is  my testcase");
 
-    /// /        WaitUtility.waitforElement(driver,60,AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView") );
-    /// /        WebElement ele = driver.findElement(AppiumBy.xpath("//android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView"));
-    /// /        Assert.assertTrue(ele.isDisplayed());
-//        Assert.assertTrue(driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Text\"]")).isDisplayed());
-//    }
-
-    @Test
+    @Test(description = "IOS device run")
     public void testcase3() throws MalformedURLException, InterruptedException {
         System.out.println("this is starts");
         XCUITestOptions options = new XCUITestOptions();
-        options.setPlatformVersion("18.4");
-        options.setDeviceName("iPhone 16");
-        options.setUdid("BAB4B426-2E41-4A08-9557-7A332F0A6833");
+//        options.setPlatformVersion("18.4");
+//        options.setDeviceName("iPhone 16");
+        options.setUdid("4B733329-44E4-4712-9AD2-8EC4E24CF059");
 //        options.setApp("/Users/aravindbalaji/Documents/Appium/SampleApp/ios-app.zip");
         options.setBundleId("com.apple.reminders");
-//        options.setUseNewWDA(false);
+        options.setUseNewWDA(false);
 //        options.setAutoWebview(true);
 //        options.setAppPushTimeout(Duration.ofMillis(50000));
 

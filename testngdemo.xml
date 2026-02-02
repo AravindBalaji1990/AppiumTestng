@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SuiteListener">
+<suite name="SuiteListener" parallel="classes" thread-count="3">
     <listeners>
         <listener class-name="testnglistener.TestNgListenerDemo"></listener>
         <!--        <listener class-name="testnglistener.RetryListener"></listener>-->
     </listeners>
-    <test name="TestToRun">
+<!--    <test name="TestToRun ANDROID">-->
+<!--        <classes>-->
+<!--            <class name="basicpommodel.SimplePOM_AND"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="TestToRun IOS">-->
+<!--        <classes>-->
+<!--            <class name="basicpommodel.SimplePOM_IOS"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="TestToRun ANDROID/IOS">
         <classes>
-            <class name="basicpommodel.SimplePOM_AND" />
+            <class name="basicpommodel.SimplePOM_AND"/>
+            <class name="basicpommodel.SimplePOM_IOS"/>
         </classes>
-    </test> <!-- Test -->
+    </test>
 </suite> <!-- Suite -->
